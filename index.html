@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuana Metdar</title>
+  <meta name="description" content="Tuana Metdar — Software Engineering student at Samsun University. Full-stack, mobile and system-level projects.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Big title on the "desktop" -->
+  <header class="desk-title" id="top">
+    <p class="boot">C:\&gt; whoami</p>
+    <h1>Tuana Metdar</h1>
+    <p class="subtitle">Software Engineering student · Samsun, TR</p>
+  </header>
+
+  <div class="desktop">
+
+    <!-- Desktop icons = navigation -->
+    <nav class="icons" aria-label="Sections">
+      <a href="#about" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 4h20l8 8v32H10z" class="paper"/><path d="M30 4v8h8" class="line"/><path d="M16 22h16M16 28h16M16 34h10" class="line"/></svg>
+        <span>about.txt</span>
+      </a>
+      <a href="#experience" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h14l4 4h22v26H4z" class="folder"/><path d="M4 20h40" class="line"/></svg>
+        <span>experience</span>
+      </a>
+      <a href="#projects" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h14l4 4h22v26H4z" class="folder"/><path d="M4 20h40" class="line"/></svg>
+        <span>projects</span>
+      </a>
+      <a href="#skills" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24" class="chip"/><path d="M18 6v6M24 6v6M30 6v6M18 36v6M24 36v6M30 36v6M6 18h6M6 24h6M6 30h6M36 18h6M36 24h6M36 30h6" class="line"/><rect x="18" y="18" width="12" height="12" class="core"/></svg>
+        <span>skills.exe</span>
+      </a>
+      <a href="#terminal" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="32" rx="3" class="screen"/><path d="M12 18l6 6-6 6M22 31h12" class="prompt-icon"/></svg>
+        <span>terminal.exe</span>
+      </a>
+      <a href="#contact" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="10" width="40" height="28" class="paper"/><path d="M4 10l20 16 20-16" class="line"/></svg>
+        <span>contact</span>
+      </a>
+    </nav>
+
+    <main class="windows">
+
+      <!-- ABOUT -->
+      <section class="window" id="about">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\about.txt</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body about">
+          <!-- My GitHub identicon, redrawn as SVG -->
+          <svg class="avatar" viewBox="0 0 5 5" aria-label="Tuana's avatar" role="img">
+            <rect x="0" y="0" width="2" height="1"/><rect x="3" y="0" width="2" height="1"/>
+            <rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/>
+            <rect x="1" y="3" width="3" height="1"/>
+          </svg>
+          <div>
+            <h2>hi! i'm <span class="hl">Tuana</span></h2>
+            <p>
+              I'm a third-year Software Engineering student at Samsun University.
+              On our TEKNOFEST team, Kozmos Havacılık, I set up the communication between
+              systems and designed the ground station interface. During my internship at
+              Solvera Yazılım and in our UDHAM R&amp;D projects, I've taken products from the
+              first idea to a working prototype.
+            </p>
+            <p>
+              I like working on both ends: web, mobile and backend apps with C#, TypeScript
+              and React, and system-level work with ROS, GStreamer and camera or sensor data.
+            </p>
+            <ul class="facts">
+              <li><b>uni</b> Samsun University, 3rd year</li>
+              <li><b>loc</b> Samsun, Türkiye</li>
+              <li><b>mail</b> <a href="mailto:tmetdar@gmail.com">tmetdar@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="window" id="experience">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\experience.log</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body">
+          <ol class="log">
+            <li>
+              <span class="when">[summer 2026]</span> <!-- TODO: tarihi kontrol et -->
+              <div>
+                <h3>R&amp;D Intern · Solvera Yazılım</h3>
+                <p>
+                  Worked in the R&amp;D team on product development, from the idea stage
+                  to prototype and delivery.
+                  <!-- TODO: istersen hangi ürün/teknoloji üzerinde çalıştığını ekle -->
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="when">[TEKNOFEST]</span> <!-- TODO: istersen yılları yaz, örn. [2024 – 2025] -->
+              <div>
+                <h3>Communication &amp; Interface · Kozmos Havacılık</h3>
+                <p>
+                  Samsun University's TEKNOFEST aviation team. I handled the communication
+                  between systems, managed the data flow and designed the operator and
+                  ground station interfaces.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="window" id="projects">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\projects\</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body">
+
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="filter is-on" data-filter="all" aria-pressed="true">all</button>
+            <button class="filter" data-filter="software" aria-pressed="false">software</button>
+            <button class="filter" data-filter="rnd" aria-pressed="false">R&amp;D / hardware</button>
+            <span class="dir" id="item-count">8 items</span>
+          </div>
+
+          <div class="files">
+
+            <!-- R&D / hardware -->
+            <article class="file" data-cat="rnd">
+              <header>
+                <span class="file-name">railway-fault/</span>
+                <span class="badge award">award</span>
+              </header>
+              <h3>Railway Mechanical Fault Detection</h3>
+              <p>
+                A system that finds mechanical defects on railway lines from camera images
+                using computer vision models. Received the UDHAM R&amp;D Incentive Award.
+              </p>
+              <ul class="tags"><li>computer vision</li><li>OpenCV</li><li>Python</li></ul> <!-- TODO: teknolojileri kontrol et -->
+            </article>
+
+            <article class="file" data-cat="rnd">
+              <header>
+                <span class="file-name">tunel-rob/</span>
+                <span class="badge">UDHAM 2053</span>
+              </header>
+              <h3>Tünel-ROB (AKU-BİO)</h3>
+              <p>
+                An autonomous rail robot for tunnel safety and bio-chemical mapping. I designed
+                the end-to-end architecture: e-nose sensor arrays, LoRa Mesh communication and
+                real-time data analysis. Submitted to the UDHAM 2053 R&amp;D competition.
+              </p>
+              <ul class="tags"><li>e-nose</li><li>LoRa Mesh</li><li>robotics</li></ul>
+            </article>
+
+            <article class="file" data-cat="rnd">
+              <header>
+                <span class="file-name">uav-enose/</span>
+                <span class="badge">study</span> <!-- TODO: bir yere gönderildi mi? İstemezsen bu kartı sil -->
+              </header>
+              <h3>UAV Gas Mapping for Planetary Exploration</h3>
+              <p>
+                A study on a lightweight electronic nose for UAVs, for places rovers can't reach
+                on Mars or Titan. Sensor data is cleaned with a Kalman filter and classified on
+                the microcontroller, and the ROS-based flight controller steers toward the gas source.
+              </p>
+              <ul class="tags"><li>UAV</li><li>Kalman filter</li><li>edge ML</li><li>ROS</li></ul>
+            </article>
+
+            <!-- Software -->
+            <article class="file" data-cat="software">
+              <header>
+                <span class="file-name">chat-app/</span>
+                <span class="badge">full-stack</span>
+              </header>
+              <h3>Real-time Messaging App</h3>
+              <p>
+                A full-stack chat app where messages arrive instantly through SignalR.
+                The backend is ASP.NET Core with a Supabase (PostgreSQL) database, and the
+                frontend is React with TypeScript.
+              </p>
+              <ul class="tags"><li>ASP.NET Core</li><li>SignalR</li><li>React</li><li>PostgreSQL</li></ul>
+              <!-- TODO: repo linki: <a class="repo" href="https://github.com/tuana0410/...">view repo →</a> -->
+            </article>
+
+            <article class="file" data-cat="software">
+              <header>
+                <span class="file-name">visualizer/</span>
+                <span class="badge">web</span>
+              </header>
+              <h3>Algorithm &amp; Data Structure Visualizer</h3>
+              <p>
+                An interactive web app that shows how algorithms and data structures work,
+                step by step.
+              </p>
+              <ul class="tags"><li>React</li><li>TypeScript</li><li>Tailwind CSS</li></ul>
+              <!-- TODO: repo / canlı link varsa ekle -->
+            </article>
+
+            <article class="file" data-cat="software">
+              <header>
+                <span class="file-name">organizer-app/</span>
+                <span class="badge">mobile</span>
+              </header>
+              <h3>Academic &amp; Personal Organizer</h3>
+              <p>
+                A mobile app for keeping track of classes, exams and tasks in one place.
+              </p>
+              <ul class="tags"><li>React Native</li><li>Expo</li></ul>
+            </article>
+
+            <article class="file" data-cat="software">
+              <header>
+                <span class="file-name">arpacioglu-ms/</span>
+                <span class="badge">business</span>
+              </header>
+              <h3>Arpacıoğlu Ambalaj Management System</h3>
+              <p>
+                Internal software for a packaging company that moves stock tracking, order
+                management and price quotes from paper to one system.
+              </p>
+              <ul class="tags"><li>stock</li><li>orders</li><li>quotes</li></ul> <!-- TODO: hangi teknolojilerle yaptın? -->
+            </article>
+
+            <article class="file" data-cat="software">
+              <header>
+                <span class="file-name">gpower-teardown/</span>
+                <span class="badge">course</span>
+              </header>
+              <h3>Clinical Software Teardown (YZM301)</h3>
+              <p>
+                A reverse engineering sprint for a course: taking apart the modules of a
+                clinical software with REA tools and Node.js to see how it works inside.
+              </p>
+              <ul class="tags"><li>reverse engineering</li><li>REA</li><li>Node.js</li></ul>
+              <a class="repo" href="https://github.com/tuana0410/gpower-teardown" target="_blank" rel="noopener">view repo →</a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="window" id="skills">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\skills.exe</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body">
+          <dl class="skills">
+            <dt>languages</dt>
+            <dd><span>C#</span><span>C++</span><span>Python</span><span>TypeScript</span></dd>
+            <dt>frameworks</dt>
+            <dd><span>React</span><span>React Native</span><span>Next.js</span><span>Node.js / Express</span><span>ASP.NET Core</span></dd>
+            <dt>data</dt>
+            <dd><span>PostgreSQL</span><span>MSSQL</span><span>Supabase</span><span>EF Core</span><span>SignalR</span><span>REST API</span></dd>
+            <dt>systems</dt>
+            <dd><span>ROS</span><span>Gazebo</span><span>GStreamer</span><span>OpenCV</span><span>PySide6</span></dd>
+            <dt>tools</dt>
+            <dd><span>Docker</span><span>Git</span><span>Linux</span><span>Figma</span><span>REA</span></dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- TERMINAL -->
+      <section class="window terminal" id="terminal">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\terminal.exe</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body term-body" id="term-body">
+          <div class="term-output" id="term-output" aria-live="polite">
+            <p>TuanaOS terminal. Type <b>help</b> to see the commands.</p>
+          </div>
+          <form class="term-line" id="term-form" autocomplete="off">
+            <label for="term-input" class="prompt">tuana@samsun:~$</label>
+            <input id="term-input" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command">
+          </form>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="window" id="contact">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\contact</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body">
+          <p>The easiest way to reach me is by email.</p>
+          <div class="contact-buttons">
+            <a class="pixel-btn" href="mailto:tmetdar@gmail.com">✉ email</a>
+            <a class="pixel-btn" href="https://github.com/tuana0410" target="_blank" rel="noopener">GitHub</a>
+            <a class="pixel-btn" href="https://www.linkedin.com/in/tuana-metdar-8a4882323" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Taskbar -->
+  <footer class="taskbar">
+    <a href="#top" class="start">TM</a>
+    <div class="task-links">
+      <a href="https://github.com/tuana0410" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+      <a href="https://www.linkedin.com/in/tuana-metdar-8a4882323" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:tmetdar@gmail.com" aria-label="Email">@</a>
+    </div>
+    <span class="clock" id="clock" title="Time in Samsun">--:--</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
