@@ -530,6 +530,39 @@ h1, h2, h3 {
   background: var(--soft);
 }
 
+.outputs {
+  margin: 14px 0;
+}
+
+.outputs summary {
+  display: inline-block;
+  cursor: pointer;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--soft);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 var(--lavender);
+  list-style: none;
+}
+
+.outputs summary::-webkit-details-marker {
+  display: none;
+}
+
+.outputs summary::before {
+  content: "▸ ";
+}
+
+.outputs[open] summary::before {
+  content: "▾ ";
+}
+
+.lab figure.small {
+  max-width: 480px;
+}
+
 .findings {
   margin: 0;
   padding-left: 18px;
