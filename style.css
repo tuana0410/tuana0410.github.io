@@ -464,6 +464,77 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
+/* ---------- Lab ---------- */
+.lab h3 {
+  margin: 0 0 8px;
+  color: var(--bar-dark);
+}
+
+.lab h3:not(:first-child) {
+  margin-top: 28px;
+}
+
+.lab p,
+.lab li {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.lab figure {
+  margin: 14px 0;
+}
+
+.lab img,
+.lab video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--lavender);
+  background: var(--ink);
+}
+
+.lab figcaption {
+  margin-top: 6px;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.clips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 18px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 14px 0;
+}
+
+.lab table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.lab th,
+.lab td {
+  padding: 6px 10px;
+  border: 1.5px solid var(--ink);
+  text-align: left;
+  vertical-align: top;
+}
+
+.lab th {
+  background: var(--soft);
+}
+
+.findings {
+  margin: 0;
+  padding-left: 18px;
+}
+
 /* ---------- Skills ---------- */
 .skills {
   margin: 0;
