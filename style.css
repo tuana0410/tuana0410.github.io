@@ -843,3 +843,90 @@ h1, h2, h3 {
   background: var(--soft);
   border-radius: 4px;
 }
+
+/* ---------- Okunabilirlik (Nov 27) ----------
+   Piksel yazı tipi sadece büyük başlıkta kalsın; küçük başlıklar ve metin daha net olsun. */
+:root {
+  --muted: #3f3657;
+}
+
+body {
+  font-size: 16px;
+}
+
+h2,
+h3,
+.skills dt {
+  font-family: var(--mono);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.file h3 {
+  font-size: 1.05rem;
+}
+
+.file p,
+.lab p,
+.lab li {
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.file-name { font-size: 0.86rem; }
+.badge { font-size: 0.75rem; }
+.tags li { font-size: 0.78rem; }
+.repo { font-size: 0.88rem; }
+.lab figcaption { font-size: 0.8rem; }
+
+/* Lab kartları */
+.lab-cards {
+  margin-bottom: 28px;
+}
+
+.lab .file img.card-img {
+  margin: 0 0 12px;
+  box-shadow: none;
+}
+
+.lab .lab-cards h3 {
+  margin: 0 0 8px;
+}
+
+/* Gövde metni: net okunan sistem yazı tipi. Mono sadece etiket/dosya adı gibi "bilgisayar" ayrıntılarında. */
+:root {
+  --text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+button,
+h2,
+h3,
+.skills dt {
+  font-family: var(--text);
+}
+
+body {
+  line-height: 1.6;
+}
+
+h2,
+h3 {
+  letter-spacing: 0;
+}
+
+.path,
+.boot,
+.file-name,
+.badge,
+.tags li,
+.filter,
+.dir,
+.icon span,
+pre,
+code,
+.terminal,
+.terminal input,
+.prompt {
+  font-family: var(--mono);
+}

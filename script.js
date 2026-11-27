@@ -28,7 +28,7 @@ document.querySelectorAll(".icon").forEach((icon) => {
 
 // ---------- Project filter (all / software / R&D) ----------
 const filterButtons = document.querySelectorAll(".filter");
-const projectCards = document.querySelectorAll(".file");
+const projectCards = document.querySelectorAll("#projects .file");
 const itemCount = document.getElementById("item-count");
 
 function filterProjects(category) {

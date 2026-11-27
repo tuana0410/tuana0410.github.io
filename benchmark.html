@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual benchmark · Tuana Metdar</title>
+  <meta name="description" content="A Turkish visual question benchmark: do vision models really see what is in a photo? Counting, colour and position, Turkish sign reading.">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+  <header class="desk-title" id="top">
+    <p class="boot">C:\&gt; cd lab\benchmark</p>
+    <h1>Do vision models really see?</h1>
+    <p class="subtitle">NEXA Fellowship · Week 4 · my own benchmark</p>
+  </header>
+
+  <div class="desktop">
+    <nav class="icons" aria-label="Sections">
+      <a href="index.html#lab" class="icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h14l4 4h22v26H4z" class="folder"/><path d="M4 20h40" class="line"/></svg>
+        <span>← lab</span>
+      </a>
+    </nav>
+
+    <main class="windows">
+      <section class="window" id="benchmark">
+        <div class="titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="path">C:\TUANA\lab\benchmark\</span>
+          <button class="min" aria-label="Minimize window" aria-expanded="true">_</button>
+        </div>
+        <div class="window-body lab">
+
+          <h3>Counting, position and Turkish signs</h3>
+          <p>
+            I give vision models a photo and ask short questions with one clear answer:
+            "How many swans are there?", "Is the red bag on the left or the right?",
+            "What does the sign say?". The answer key was written before any model was tried,
+            and scoring is done by code on the raw answer, not by reading the screen.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Category</th><th>What it checks</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td>Counting</td><td>objects, and subsets of them (only the white ones, only the standing ones)</td><td>How many bicycles are standing?</td></tr>
+                <tr><td>Colour / position</td><td>colours, left/right, front/behind, scene details, things that are <i>not</i> there</td><td>Which side is the bench on?</td></tr>
+                <tr><td>Turkish text</td><td>signs, boards and screens with ç, ğ, ı, İ, ö, ş, ü</td><td>ATATÜRK BULVARI vs ATATURK BULVARİ</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ul class="findings">
+            <li><b>Questions:</b> 193 in total. Each question carries a source label: 113 are labelled <code>kaynak=insan</code> and 80 <code>kaynak=ai</code>. The two groups are scored and reported separately.</li>
+            <li><b>Photos:</b> 27 scenes. 13 are my own photos (Samsun, Ankara, Istanbul, my classroom), which are not on the internet, so a model cannot have memorised them; the other 14 come from other sources.</li>
+            <li><b>Same conditions:</b> every model gets the same photo and the same message: cloud models through the Gemini API (temperature 0, free tier), local models through Ollama on my laptop. Provider, settings and time are logged with every answer.</li>
+            <li><b>Turkish-aware scoring:</b> "ISTANBUL" is not "İSTANBUL", but suffixes are fine: "mavi" also matches "mavidir", "sol" matches "solunda". I added the suffix rule after reading the raw outputs and re-scored every model with it.</li>
+          </ul>
+
+          <h3>Results · 10 models</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Model</th><th>Overall</th><th>Counting</th><th>Colour / position</th><th>Turkish text</th><th>Questions</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>gemini-3.8-flash</td><td><b>95%</b></td><td>96%</td><td>95%</td><td>89%</td><td>93*</td></tr>
+                <tr><td>2</td><td>gemini-3.1-flash-lite</td><td><b>82%</b></td><td>67%</td><td>88%</td><td>84%</td><td>193</td></tr>
+                <tr><td>3</td><td>gemini-3.6-flash</td><td><b>81%</b></td><td>69%</td><td>86%</td><td>84%</td><td>193</td></tr>
+                <tr><td>4</td><td>gemini-3.5-flash-lite</td><td><b>78%</b></td><td>63%</td><td>85%</td><td>76%</td><td>193</td></tr>
+                <tr><td>5</td><td>qwen2.5vl:3b (local)</td><td><b>40%</b></td><td>39%</td><td>45%</td><td>16%</td><td>193</td></tr>
+                <tr><td>6</td><td>gemma-4-31b-it (open weights)</td><td><b>40%</b></td><td>47%</td><td>40%</td><td>25%</td><td>172*</td></tr>
+                <tr><td>7</td><td>gemma-4-26b-a4b-it (open weights)</td><td><b>32%</b></td><td>39%</td><td>32%</td><td>16%</td><td>193</td></tr>
+                <tr><td>8</td><td>llava:7b (local)</td><td><b>15%</b></td><td>0%</td><td>22%</td><td>8%</td><td>193</td></tr>
+                <tr><td>9</td><td>granite3.2-vision (local)</td><td><b>6%</b></td><td>0%</td><td>9%</td><td>0%</td><td>193</td></tr>
+                <tr><td>10</td><td>moondream (local)</td><td><b>0%</b></td><td>0%</td><td>0%</td><td>0%</td><td>193</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>* Free-tier quota and server load: these models answered only part of the set, scored on the questions they answered.</p>
+
+          <ul class="findings">
+            <li><b>Big gap between cloud and small models:</b> the Gemini family scored 78–95%, the best local model (qwen2.5vl, 3 GB) 40%.</li>
+            <li><b>Counting is the weak spot of the lighter Gemini models</b> (63–69%), while the same models get 85–88% on colour and position.</li>
+            <li><b>Reading Turkish signs is where small models break:</b> qwen2.5vl and gemma-4-26b 16%, granite 0%.</li>
+            <li><b>Small local models struggle with Turkish questions:</b> moondream answered in English ("Yes") and skipped questions; llava gave vague answers like "a few people" instead of a number.</li>
+            <li><b>Gemma models often "thought" until they hit the token limit</b> and left questions unanswered, which counts as wrong.</li>
+            <li><b>Questions labelled <code>insan</code> were harder:</b> 41.7% average across models vs 48.3% on <code>ai</code> questions.</li>
+            <li><b>Cost:</b> every run used free tiers (0 $), so the chart compares speed instead of price.</li>
+          </ul>
+
+          <p>
+            <b>Questions stay private, scores are public.</b> The question set is a
+            <a href="https://huggingface.co/datasets/tuana0410/gorsel-sayma-bench" target="_blank" rel="noopener">gated dataset on Hugging Face</a>
+            (access on request) so it does not leak into training data. A 50-question open demo set is in
+            <a href="https://github.com/nexa-lab-ai/nexa-bench" target="_blank" rel="noopener">nexa-bench</a>.
+          </p>
+          <a class="repo" href="https://github.com/tuana0410/gorsel-sayma-bench" target="_blank" rel="noopener">code on GitHub →</a>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="taskbar">
+    <a href="index.html" class="start">TM</a>
+    <div class="task-links">
+      <a href="https://github.com/tuana0410" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+      <a href="https://www.linkedin.com/in/tuana-metdar-8a4882323" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:tmetdar@gmail.com" aria-label="Email">@</a>
+    </div>
+    <span class="clock" id="clock" title="Time in Samsun">--:--</span>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".window .min").forEach((b) => b.addEventListener("click", () => {
+      const w = b.closest(".window"), m = !w.classList.contains("is-minimized");
+      w.classList.toggle("is-minimized", m); b.textContent = m ? "□" : "_"; b.setAttribute("aria-expanded", String(!m));
+    }));
+    const clock = document.getElementById("clock");
+    const tick = () => clock.textContent = new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Istanbul" });
+    tick(); setInterval(tick, 30000);
+  </script>
+</body>
+</html>
